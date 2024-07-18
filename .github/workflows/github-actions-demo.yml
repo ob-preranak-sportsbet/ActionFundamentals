@@ -39,7 +39,7 @@ jobs:
 
   LoadTest:
     runs-on: ubuntu-latest
-    if: github..event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch'
     needs: Build
     environment: Load-Test
     steps:
@@ -53,7 +53,7 @@ jobs:
     environment:
       name: Production
       url: https://writeabout.net
-    if: github..event.inputs.environment == 'Production'
+    if: github.event.inputs.environment == 'Production'
     steps:
       - run: |
           echo 'Step 1...'
